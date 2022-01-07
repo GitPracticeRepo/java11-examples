@@ -2,7 +2,7 @@ node('java-11') {
     try {
         properties([parameters([choice(choices: ['scripted', 'master', 'declarative'], description: 'branch to be built', name: 'BRANCH_TO_BUILD')])])
         stage('git') {
-            git url: 'https://github.com/GitPracticeRepo/java11-examples.git', branch: "${params.BRANCH_TO_BUILD}"
+            git url: 'https://github.com/srilakshmi768/java11-examples.git', branch: "${params.BRANCH_TO_BUILD}"
         }
         stage('build') {
             sh '''
