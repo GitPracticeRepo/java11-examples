@@ -1,5 +1,5 @@
 node('java-11') {
-   
+   properties([pipelineTriggers([upstream('starterProject, ')])])
         stage('git') {
             git url: 'https://github.com/srilakshmi768/java11-examples.git', branch: "${params.BRANCH_TO_BUILD}"
         }
